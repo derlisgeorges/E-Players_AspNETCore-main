@@ -14,9 +14,10 @@ namespace E_Players_AspNETCore.Controllers
     {
 
         Jogador jogadorModel = new Jogador();
+        Equipe equipeModel = new Equipe();
 
         public IActionResult Index()
-        {
+        {   ViewBag.Equipes   = equipeModel.ReadAll();
             ViewBag.Jogadores = jogadorModel.ReadAll();
             return View();
         }
